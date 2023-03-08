@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+}
+
+main h2 {
+    color: dimgray;
+    border-bottom: 1px solid dimgray;
+    font-weight: 200;
+}
+
+p {
+    line-height: 1.5;
+    color: dimgray;
+}
+
+body,
+header > section,
+form,
+figcaption,
+details > ul,
+header > section > article,
+main,
+main > section,
+main > section > article {
+    display: flex;
+    flex-direction: column;
+}

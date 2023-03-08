@@ -6,31 +6,79 @@ iframe {
     width: 40%;
 }
 
-@media (min-width: $mobileScreen) {
+@media (min-width: 200px) {
 
     main {
         padding-top: 5vh;
         row-gap: 10vh;
     }
 
-    .row {
+    header {
+        height: 50vh;
+
+        > section {
+            height: 100%;
+            width: 100%;
+            background-color: rgba(50,50,50,.8);
+            align-items: center;
+            row-gap: 4vh;
+            > ul {
+                display: none;
+            }
+
+            > article {
+                align-items: center;
+                color: whitesmoke;
+                row-gap: 2vh;
+            }
+
+            article > a {
+                color: whitesmoke;
+                background-color: $defaultColor;
+                border-radius: 5px;
+                padding: 2%;
+                width: 50%;
+                text-align: center;
+                font-weight: 600;
+            }
+
+            h2 {
+                border-bottom: 1px solid whitesmoke;
+            }
+        }
+    }
+
+    nav > ul {
+        display: none;
+    }
+
+    %title {
+        @include flexColumn(2vh);
+        @include flexCenter;
+
+        > p {
+            text-align: center;
+        }
+    }
+
+    %content {
+        @include flexColumn(5vh);
         align-items: center;
+    }
+
+    .row {
+        display: flex;
         row-gap: 5vh;
 
         > article {
-            @include flexColumn(2vh);
-            @include flexCenter;
-
-            > p {
-                text-align: center;
-            }
+            @extend %title
         }
     }
 
     .services {
 
         > section {
-            @include flexColumn(3vh);
+            @include flexColumn(5vh);
             align-items: center;
 
             > aside:nth-child(1) {
@@ -72,6 +120,94 @@ iframe {
             font-size: 24px;
         }
     }
+
+    .portfolio {
+
+        align-items: center;
+
+        > section {
+            width: 95%;
+            @include flexColumn(2vh);
+        }
+
+        figcaption {
+            display: none;
+        }
+
+        img {
+            width: 100%;
+            height: 45vh;
+        }
+    }
+
+    .skills {
+
+        @include flexColumn(5vh);
+        > article {
+            @extend %title;
+            row-gap: 0vh;
+            > p {
+                font-size: 14px;
+                font-style: italic;
+                width: 90%;
+            }
+        }
+
+        aside,
+        > section {
+            @extend %content;
+        }
+
+        aside {
+            width: 90%;
+        }
+
+        h3 {
+            font-size: 18px;
+            font-style: italic;
+            color: gray;
+            font-weight: 400;
+        }
+
+        ul {
+            width: 90%;
+            @include flexColumn(2vh);
+        }
+
+        li {
+            display: flex;
+            width: 100%;
+            background-color: gainsboro;
+            height: 5vh;
+        }
+
+        h6 {
+            background-color: $defaultColor;
+            width: 80%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        li:nth-child(1) >  h6 {
+            width: 90%;
+        }
+
+        li:nth-child(3) > h6 {
+            width: 70%;
+        }
+
+        small {
+            color: whitesmoke;
+            padding-left: 2vh;
+        }
+
+
+
+
+        
+    }
+
 
 
 }

@@ -1,0 +1,10 @@
+@mixin flexColumn($rowgap) {
+    display: flex;
+    flex-direction: column;
+    row-gap: $rowgap;
+}
+
+@mixin flexCenter {
+    align-items: center;
+    justify-content: center;
+}

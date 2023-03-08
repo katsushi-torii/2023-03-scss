@@ -144,6 +144,24 @@ iframe {
         }
     }
 
+    .gallery {
+        @include flexColumn(3vh);
+
+        > figure {
+            align-items: center;
+        }
+
+        img {
+            width: 40vh;
+            height: 40vh;
+            border-radius: 50%;
+        }
+
+        figcaption {
+            display: none;
+        }
+    }
+
     .skills {
 
         @include flexColumn(5vh);
@@ -259,6 +277,24 @@ iframe {
         background-color: $defaultColor;
         color: whitesmoke;
         border: 3px solid transparent;
+    }
+
+    footer {
+        padding-top: 10vh;
+        @include flexColumn(2vh);
+        align-items: center;
+
+        p {
+            font-size: 14px;
+        }
+
+        a {
+            background-color: $defaultColor;
+            padding: 3%;
+            color: whitesmoke;
+            text-align: center;
+            width: 50%;
+        }
     }
 
 }

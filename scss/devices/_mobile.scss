@@ -71,7 +71,11 @@ iframe {
         row-gap: 5vh;
 
         > article {
-            @extend %title
+            @extend %title;
+        }
+
+        > section {
+            @extend %content;
         }
     }
 
@@ -202,12 +206,59 @@ iframe {
             padding-left: 2vh;
         }
 
-
-
-
-        
     }
 
+    .contact {
+        > section > article {
+            @include flexColumn(3vh);
+            width: 90%;
+            font-size: 14px;
+        }
 
+        > section > section {
+            width: 90%
+        }
+
+        ul {
+            @include flexColumn(1vh);
+            list-style-type: none;
+            color: dimgray;
+            a {
+                color: $defaultColor;
+            }
+        }
+
+        li {
+            display: flex;
+        }
+    }
+
+    form {
+        row-gap: 2vh;
+    }
+
+    input {
+        height: 5vh;
+    }
+
+    textarea {
+        height: 30vh;
+    }
+
+    input,
+    textarea {
+        border: 1px solid darkgrey;
+    }
+
+    ::placeholder {
+        padding: 2vw;
+        color: darkgrey;
+    }
+
+    [type=submit] {
+        background-color: $defaultColor;
+        color: whitesmoke;
+        border: 3px solid transparent;
+    }
 
 }

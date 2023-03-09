@@ -53,6 +53,88 @@
         font-size: 20px;
     }
 
+    .team-gallery {
+        @include flexColumn(3vh);
+
+        > figure {
+            align-items: center;
+        }
+
+        img {
+            width: 40vh;
+            height: 40vh;
+            border-radius: 50%;
+        }
+
+        figcaption {
+            display: none;
+        }
+    }
+    
+    .skills {
+        @include flexColumn(5vh);
+        > article {
+            @extend %title;
+            row-gap: 0vh;
+            > p {
+                font-style: italic;
+                font-size: 14px;
+                width: 90%;
+            }
+        }
+
+        aside {
+            width: 90%;
+        }
+
+        aside, 
+        > section {
+            @extend %content;
+        }
+
+        h3 {
+            text-transform: uppercase;
+            font-size: 18px;
+            font-style: italic;
+            color: gray;
+            font-weight: 400;
+        }
+
+        ul {
+            @include flexColumn(2vh);
+            width: 90%;
+        }
+
+        li {
+            display: flex;
+            width: 100%;
+            height: 5vh;
+            background-color: gainsboro;
+        }
+
+        li:first-child > h6 {
+            width: 90%;
+        }
+
+        li:nth-child(3) > h6 {
+            width: 70%;
+        }
+
+        h6 {
+            display: flex;
+            align-items: center;
+            width: 80%;
+            height: 100%;
+            background-color: $defaultColor;
+        }
+
+        small {
+            color: whitesmoke;
+            padding-left: 2vh;
+            text-transform: uppercase;
+        }
+    }
+
     .contact {
         > section {
             flex-direction: row;

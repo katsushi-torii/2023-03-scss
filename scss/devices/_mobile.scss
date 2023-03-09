@@ -1,13 +1,4 @@
-img {
-    width: 40%;
-}
-
-iframe {
-    width: 40%;
-}
-
 @media (min-width: 200px) {
-
     main {
         padding-top: 5vh;
         row-gap: 10vh;
@@ -16,11 +7,10 @@ iframe {
     header {
         height: 50vh;
         overflow-y: hidden;
-
         > section {
             height: 100%;
             width: 100%;
-            background-color: rgba(50,50,50,.8);
+            background-color: rgba(50,50,50,.59);
             align-items: center;
             row-gap: 4vh;
             > ul {
@@ -32,25 +22,26 @@ iframe {
                 color: whitesmoke;
                 row-gap: 2vh;
             }
-
-            article > a {
-                color: whitesmoke;
-                background-color: $defaultColor;
-                border-radius: 5px;
-                padding: 2%;
-                width: 50%;
-                text-align: center;
-                font-weight: 600;
-                text-transform: uppercase;
-            }
-
-            h2 {
-                border-bottom: 1px solid whitesmoke;
-            }
         }
+
+        article > a {
+            color: whitesmoke;
+            background-color: $defaultColor;
+            border-radius: 5px;
+            padding: 3%;
+            width: 50%;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        h2 {
+            border-bottom: 1px solid whitesmoke;
+        }
+
     }
 
-   nav {
+    /* NAVIGATION MENU */
+    nav {
         position: relative;
         padding-left: 5%;
         padding-right: 5%;
@@ -116,6 +107,10 @@ iframe {
         font-size: 20px;
     }
 
+    img {
+        width: 30%;
+    }
+
     %title {
         @include flexColumn(2vh);
         @include flexCenter;
@@ -143,21 +138,23 @@ iframe {
         }
     }
 
+    /* SERVICES */
     .services {
 
         > section {
-            @include flexColumn(5vh);
-            align-items: center;
 
             > aside:nth-child(1) {
-                background-color: $seagreen;
+                background-color: $seaGreen;
             }
+
             > aside:nth-child(2) {
                 background-color: $orange;
             }
+
             > aside:nth-child(3) {
                 background-color: $blue;
             }
+
             > aside:nth-child(4) {
                 background-color: $green;
             }
@@ -165,12 +162,12 @@ iframe {
 
         aside {
             color: whitesmoke;
-            min-height: 35vh;
+            min-height: 45vh;
             width: 90%;
             @include flexColumn(2vh);
             @include flexCenter;
 
-            > p {
+            p {
                 color: whitesmoke;
                 width: 80%;
                 text-align: center;
@@ -178,24 +175,21 @@ iframe {
             }
         }
 
-        i {
-            display: none;
-        }
-
         h4 {
             border-bottom: 1px solid whitesmoke;
             padding-bottom: 1vh;
             font-size: 24px;
         }
+
+        i {
+            display: none;
+        }
     }
 
+    /* PORTFOLIO */
     .portfolio {
-
-        align-items: center;
-
         > section {
             width: 95%;
-            @include flexColumn(2vh);
         }
 
         figcaption {
@@ -208,7 +202,8 @@ iframe {
         }
     }
 
-    .gallery {
+    /* TEAM - GALLERY */
+    .team-gallery {
         @include flexColumn(3vh);
 
         > figure {
@@ -225,30 +220,30 @@ iframe {
             display: none;
         }
     }
-
+    /* TEAM - SKILLS */
     .skills {
-
         @include flexColumn(5vh);
         > article {
             @extend %title;
             row-gap: 0vh;
             > p {
-                font-size: 14px;
                 font-style: italic;
+                font-size: 14px;
                 width: 90%;
             }
-        }
-
-        aside,
-        > section {
-            @extend %content;
         }
 
         aside {
             width: 90%;
         }
 
+        aside, 
+        > section {
+            @extend %content;
+        }
+
         h3 {
+            text-transform: uppercase;
             font-size: 18px;
             font-style: italic;
             color: gray;
@@ -256,26 +251,18 @@ iframe {
         }
 
         ul {
-            width: 90%;
             @include flexColumn(2vh);
+            width: 90%;
         }
 
         li {
             display: flex;
             width: 100%;
-            background-color: gainsboro;
             height: 5vh;
+            background-color: gainsboro;
         }
 
-        h6 {
-            background-color: $defaultColor;
-            width: 80%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-        }
-
-        li:nth-child(1) >  h6 {
+        li:first-child > h6 {
             width: 90%;
         }
 
@@ -283,22 +270,32 @@ iframe {
             width: 70%;
         }
 
+        h6 {
+            display: flex;
+            align-items: center;
+            width: 80%;
+            height: 100%;
+            background-color: $defaultColor;
+        }
+
         small {
             color: whitesmoke;
             padding-left: 2vh;
+            text-transform: uppercase;
         }
-
     }
 
+    /* CONTACT */
     .contact {
+
         > section > article {
-            @include flexColumn(3vh);
+            @include flexColumn(2vh);
             width: 90%;
             font-size: 14px;
         }
 
         > section > section {
-            width: 90%
+            width: 90%;
         }
 
         ul {
@@ -312,11 +309,17 @@ iframe {
 
         li {
             display: flex;
+            column-gap: 1vh;
         }
     }
 
     form {
         row-gap: 2vh;
+    }
+
+    input,
+    textarea {
+        border: 1px solid gainsboro;
     }
 
     input {
@@ -325,22 +328,7 @@ iframe {
 
     textarea {
         height: 30vh;
-    }
-
-    input,
-    textarea {
-        border: 1px solid darkgrey;
-    }
-
-    ::placeholder {
-        padding: 2vw;
-        color: darkgrey;
-    }
-
-    [type=submit] {
-        background-color: $defaultColor;
-        color: whitesmoke;
-        border: 3px solid transparent;
+        resize: none;
     }
 
     footer {
@@ -361,4 +349,14 @@ iframe {
         }
     }
 
+    [type="submit"] {
+        background-color: $defaultColor;
+        border: 3px solid transparent;
+        color: whitesmoke;
+    }
+
+    ::placeholder {
+        padding: 2vw;
+        color: darkgray;
+    }
 }

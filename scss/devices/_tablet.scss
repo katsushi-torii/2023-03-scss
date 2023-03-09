@@ -1,5 +1,5 @@
 @media (min-width: $tabletScreen) {
-
+    /* HEADER */
     header {
         > section {
             > ul {
@@ -16,19 +16,18 @@
         }
 
         article > a {
+            border: 2px solid $defaultColor;
             transition: .6s;
-            border: 1px solid $defaultColor;
+
+            &:hover {
+                background-color: transparent;
+            }
         }
 
-        &:hover {
-            background-color: transparent;
-        }
 
-    }
-
-    li [class=envelope],
-    li [class=brands] {
-        border: 2px solid whitesmoke;
+        li [class*="envelope"],
+        li [class*="brands"] {
+            border: 2px solid whitesmoke;
             border-radius: 50%;
             display: flex;
             @include flexCenter;
@@ -36,110 +35,117 @@
             color: dimgray;
             height: 3vh;
             width: 3vh;
-            text-align: center;
-            transition: .5s;
+            transition: .6s;
 
             &:hover {
                 background-color: transparent;
                 color: whitesmoke;
             }
+        }
+
+        h2 {
+            font-size: 36px;
+        }
+
+        h5 {
+            font-size: 20px;
+        }
     }
 
-    h2 {
-        font-size: 36px;
+    /* SERVICES */
+    .services {
+        > section {
+            justify-content: center;
+            flex-direction: row;
+            flex-wrap: wrap;
+            column-gap: 5vw;
+        }
+        aside {
+            width: 40%;
+            min-height: 30vh;
+        }
     }
 
-    h5 {
-        font-size: 20px;
-    }
-
+    /* TEAM - GALLERY */
     .team-gallery {
-        @include flexColumn(3vh);
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: unset;
+        justify-content: center;
+        column-gap: 4vw;
 
-        > figure {
-            align-items: center;
+        figcaption {
+            display: flex;
+            visibility: hidden;
+        }
+
+        figure {
+            display: flex;
+            justify-content: flex-end;
+            position: relative;
+            width: 30vh;
+            height: 30vh;
+            overflow: hidden;
+            border-radius: 50%;
+
+            &:hover figcaption {
+                visibility: visible;
+                height: 100%;
+            }
+        }        
+
+        figcaption {
+            z-index: 2;
+            position: absolute;
+            width: 100%;            
+            height: 0%;
+            transition: .6s;
+            background-color: rgba($color: $defaultColor, $alpha: 0.8);
+            row-gap: 1vh;
+            @include flexCenter;
+            color: whitesmoke;
+            > h4 {
+                border-bottom: 1px solid whitesmoke;
+                padding-bottom: 1vh;
+            }
+
+            ul {
+                display: flex;
+                list-style-type: none;
+                column-gap: 2vw;
+            }
+
+            a {
+                display: flex;
+                background-color: white;
+                @include flexCenter;
+                color: $defaultColor;
+                font-size: 18px;
+                border-radius: 50%;
+                width: 3vh;
+                height: 3vh;
+                transition: .6s;
+
+                &:hover {
+                    background-color: $defaultColor;
+                    color: whitesmoke;
+                }
+            }
+
         }
 
         img {
-            width: 40vh;
-            height: 40vh;
-            border-radius: 50%;
-        }
-
-        figcaption {
-            display: none;
-        }
-    }
-
-    .skills {
-        @include flexColumn(5vh);
-        > article {
-            @extend %title;
-            row-gap: 0vh;
-            > p {
-                font-style: italic;
-                font-size: 14px;
-                width: 90%;
-            }
-        }
-
-        aside {
-            width: 90%;
-        }
-
-        aside, 
-        > section {
-            @extend %content;
-        }
-
-        h3 {
-            text-transform: uppercase;
-            font-size: 18px;
-            font-style: italic;
-            color: gray;
-            font-weight: 400;
-        }
-
-        ul {
-            @include flexColumn(2vh);
-            width: 90%;
-        }
-
-        li {
-            display: flex;
-            width: 100%;
-            height: 5vh;
-            background-color: gainsboro;
-        }
-
-        li:first-child > h6 {
-            width: 90%;
-        }
-
-        li:nth-child(3) > h6 {
-            width: 70%;
-        }
-
-        h6 {
-            display: flex;
-            align-items: center;
-            width: 80%;
+            z-index: 1;
+            width: 100%;            
             height: 100%;
-            background-color: $defaultColor;
-        }
-
-        small {
-            color: whitesmoke;
-            padding-left: 2vh;
-            text-transform: uppercase;
+            position: absolute;
         }
     }
 
+    /* SKILLS */
     .skills {
         align-items: center;
-
         > section {
-            flex-direction: row;
             width: 90%;
             flex-direction: row;
             align-items: flex-start;
@@ -155,15 +161,16 @@
         }
     }
 
+    /* CONTACT */
     .contact {
         > section {
-            flex-direction: row;
             width: 90%;
+            flex-direction: row;
             column-gap: 4vw;
-            align-items: center;
+            align-items: flex-start;
         }
-
-        p > {
+        
+        p {
             font-size: 18px;
         }
     }
@@ -178,7 +185,7 @@
         padding-left: 1vw;
     }
 
-    [type=submit]{
+    [type="submit"] {
         border: 3px solid $defaultColor;
         transition: .6s;
 
@@ -186,6 +193,6 @@
             background-color: transparent;
             color: $defaultColor;
             cursor: pointer;
-        }
+        } 
     }
 }

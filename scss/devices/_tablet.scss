@@ -1,4 +1,58 @@
 @media (min-width: $tabletScreen) {
+
+    header {
+        > section {
+            > ul {
+                display: flex;
+                list-style-type: none;
+                padding-top: 5%;
+                column-gap: 2vw;
+            }
+
+            > article {
+                height: 100%;
+                justify-content: center;
+            }
+        }
+
+        article > a {
+            transition: .6s;
+            border: 1px solid $defaultColor;
+        }
+
+        &:hover {
+            background-color: transparent;
+        }
+
+    }
+
+    li [class=envelope],
+    li [class=brands] {
+        border: 2px solid whitesmoke;
+            border-radius: 50%;
+            display: flex;
+            @include flexCenter;
+            background-color: whitesmoke;
+            color: dimgray;
+            height: 3vh;
+            width: 3vh;
+            text-align: center;
+            transition: .5s;
+
+            &:hover {
+                background-color: transparent;
+                color: whitesmoke;
+            }
+    }
+
+    h2 {
+        font-size: 36px;
+    }
+
+    h5 {
+        font-size: 20px;
+    }
+
     .contact {
         > section {
             flex-direction: row;

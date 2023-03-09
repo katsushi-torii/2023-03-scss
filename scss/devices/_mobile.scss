@@ -15,6 +15,7 @@ iframe {
 
     header {
         height: 50vh;
+        overflow-y: hidden;
 
         > section {
             height: 100%;
@@ -40,6 +41,7 @@ iframe {
                 width: 50%;
                 text-align: center;
                 font-weight: 600;
+                text-transform: uppercase;
             }
 
             h2 {
@@ -48,8 +50,70 @@ iframe {
         }
     }
 
-    nav > ul {
-        display: none;
+   nav {
+        position: relative;
+        padding-left: 5%;
+        padding-right: 5%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: white;
+        height: 10vh;
+        width: 90%;
+
+        h3 {
+            color: $defaultColor;
+            font-size: 30px;
+        }
+
+        > article {
+            display: flex;
+            align-items: center;
+            column-gap: 10vw;
+        }
+        
+        > ul {
+            display: none;
+        }
+
+        i {
+            padding: 10%;
+            font-size: 50px;
+            color: white;
+            background-color: $defaultColor;
+        }
+    }
+
+    details {
+        width: 90%;
+        text-align: right;
+        position: absolute;
+        > ul {
+            position: absolute;
+            list-style-type: none;
+            background-color: white;
+            width: 100%;
+            row-gap: 1vh;
+        }
+
+        li {
+            display: flex;
+        }
+
+        a {
+            width: 100%;
+            color: dimgray;
+            padding: 2%;
+            text-transform: uppercase;
+        }
+
+    }
+
+    summary {
+        background-color: $defaultColor;
+        color: white;
+        padding: 2vh;
+        font-size: 20px;
     }
 
     %title {

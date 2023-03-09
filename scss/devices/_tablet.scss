@@ -1,0 +1,35 @@
+@media (min-width: $tabletScreen) {
+    .contact {
+        > section {
+            flex-direction: row;
+            width: 90%;
+            column-gap: 4vw;
+            align-items: center;
+        }
+
+        p > {
+            font-size: 18px;
+        }
+    }
+
+    input {
+        height: 3vh;
+        padding-left: 1vw;
+    }
+
+    textarea {
+        height: 20vh;
+        padding-left: 1vw;
+    }
+
+    [type=submit]{
+        border: 3px solid $defaultColor;
+        transition: .6s;
+
+        &:hover {
+            background-color: transparent;
+            color: $defaultColor;
+            cursor: pointer;
+        }
+    }
+}

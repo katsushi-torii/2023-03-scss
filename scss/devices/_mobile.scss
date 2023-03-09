@@ -126,12 +126,12 @@ iframe {
     }
 
     %content {
-        @include flexColumn(5vh);
+        @include flexColumn(3vh);
         align-items: center;
     }
 
     .row {
-        display: flex;
+        align-items: center;
         row-gap: 5vh;
 
         > article {

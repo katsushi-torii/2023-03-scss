@@ -70,7 +70,7 @@
             display: none;
         }
     }
-    
+
     .skills {
         @include flexColumn(5vh);
         > article {
@@ -132,6 +132,26 @@
             color: whitesmoke;
             padding-left: 2vh;
             text-transform: uppercase;
+        }
+    }
+
+    .skills {
+        align-items: center;
+
+        > section {
+            flex-direction: row;
+            width: 90%;
+            flex-direction: row;
+            align-items: flex-start;
+            column-gap: 3vw;
+        }
+
+        li {
+            height: 3vh;
+        }
+
+        small {
+            font-size: 14px;
         }
     }
 
